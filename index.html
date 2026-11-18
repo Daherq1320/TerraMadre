@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datos de Transferencia y Contacto</title>
+  <style>
+    :root {
+      /* Cambia estos colores para personalizar la tarjeta de cada cliente */
+     --color-primario: #0f0f0f;
+--color-acento: #1f1c18;
+--color-fondo: #f3f2ef;
+--color-tarjeta: #ffffff;
+--color-texto: #1f2937;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background-color: var(--color-fondo); color: var(--color-texto); display: flex; justify-content: center; padding: 16px; }
+    
+    .tarjeta {
+      background: var(--color-tarjeta);
+      width: 100%;
+      max-width: 400px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      overflow: hidden;
+      text-align: center;
+      padding-bottom: 24px;
+    }
+
+    .encabezado {
+      background: linear-gradient(135deg, var(--color-primario), var(--color-acento));
+      color: white;
+      padding: 28px 20px 24px;
+    }
+
+    .logo {
+  width: auto;
+  max-width: 240px;
+  max-height: 240px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: contain;
+  margin-bottom: 0px;
+}
+
+
+    .encabezado h1 {.encabezado h1 { font-size: 1.45rem; font-weight: 700; margin-bottom: 4px; color: #f5b027; }
+ }
+    .encabezado p { font-size: 0.9rem; opacity: 0.9; }
+
+    .seccion { padding: 20px 20px 0; text-align: left; }
+    .titulo-seccion { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.8px; color: #6b7280; font-weight: 700; margin-bottom: 10px; }
+
+    .caja-banco {
+      background: #f9fafb;
+      border: 2px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+
+    .fila-dato { margin-bottom: 10px; }
+    .fila-dato:last-child { margin-bottom: 0; }
+    .etiqueta { font-size: 0.78rem; color: #6b7280; display: block; }
+    .valor { font-size: 1rem; font-weight: 600; color: #111827; word-break: break-all; }
+    .clabe-num { font-family: monospace; font-size: 1.12rem; letter-spacing: 0.5px; color: var(--color-primario); }
+
+   .btn-copiar {
+  width: 100%;
+  margin-top: 8px;
+  padding: 12px;
+  border: 1px solid #d97706;
+  border-radius: 10px;
+  background-color: var(--color-primario);
+  color: #f5b027;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.2s;
+}
+
+    }
+    .btn-copiar:active { transform: scale(0.98); }
+    .btn-copiar.copiado { background-color: #059669; }
+
+    .btn-secundario {
+      background-color: #e5e7eb;
+      color: #1f2937;
+    }
+
+    .redes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .btn-red {
+      text-decoration: none;
+      padding: 11px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-align: center;
+      color: #ffffff;
+    }
+    .wa { background-color: #25D366; }
+    .ig { background-color: #E1306C; }
+    .fb { background-color: #1877F2; }
+    .maps { background-color: #EA4335; }
+
+    .pie { margin-top: 22px; font-size: 0.75rem; color: #9ca3af; }
+  </style>
+</head>
+<body>
+
+  <div class="tarjeta">
+    <!-- ENCABEZADO DEL NEGOCIO -->
+    <div class="encabezado">
+      <!-- Reemplaza el enlace de src por la URL de tu logotipo o el nombre de tu archivo de imagen (ej. logo.png) -->
+      <img src="logo-terramadre.png" alt="logo-terramadre.png" class="logo">
+      <h1></h1>
+      <p></p>
+    </div>
+
+    <!-- SECCIÓN DE TRANSFERENCIA BANCARIA -->
+    <div class="seccion">
+      <div class="titulo-seccion">Datos para Transferencia SPEI</div>
+      
+      <div class="caja-banco">
+        <div class="fila-dato">
+          <span class="etiqueta">Banco / Institución</span>
+          <span class="valor">BanCoppel</span>
+        </div>
+        <div class="fila-dato">
+          <span class="etiqueta">Beneficiario</span>
+          <span class="valor">Darla Alexa Trejo Casillas</span>
+        </div>
+        <div class="fila-dato">
+          <span class="etiqueta">Número de Tarjeta (16 dígitos)</span>
+          <span class="valor clabe-num" id="texto-clabe">4169160723553617</span>
+        </div>
+        <button class="btn-copiar" id="btn-clabe" onclick="copiarTexto('texto-clabe', 'btn-clabe', '¡Tarjeta Copiada!')">
+          💳 Copiar Tarjeta
+        </button>
+      </div>
+
+    <!-- SECCIÓN DE REDES SOCIALES Y RESEÑAS -->
+    <div class="seccion">
+      <div class="titulo-seccion">Conecta con nosotros</div>
+      <div class="redes">
+        <a href="https://wa.me/5218116683506" target="_blank" class="btn-red wa">WhatsApp</a>
+        <a href="https://www.instagram.com/terra_madre1320/" target="_blank" class="btn-red ig">Instagram</a>
+        <a href="https://www.facebook.com/TerraMadre1320/" target="_blank" class="btn-red fb">Facebook</a>
+        <a href="https://g.page/r/CVTyZ2ayNDCBEBI/review" target="_blank" class="btn-red maps">Califícanos ★</a>
+      </div>
+    </div>
+
+    <div class="pie">
+      Tarjeta Digital NFC • Sin comisiones
+    </div>
+  </div>
+
+  <script>
+    function copiarTexto(idElemento, idBoton, mensajeExito) {
+      const texto = document.getElementById(idElemento).innerText.trim();
+      navigator.clipboard.writeText(texto).then(() => {
+        const boton = document.getElementById(idBoton);
+        const textoOriginal = boton.innerHTML;
+        boton.innerHTML = "✅ " + mensajeExito;
+        boton.classList.add("copiado");
+        
+        setTimeout(() => {
+          boton.innerHTML = textoOriginal;
+          boton.classList.remove("copiado");
+        }, 2500);
+      }).catch(err => {
+        alert("No se pudo copiar automáticamente. Selecciona el número manualmente.");
+      });
+    }
+  </script>
+
+</body>
+</html>
